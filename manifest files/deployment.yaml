@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-apps
+  labels:
+    app: tomcatapplication
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tomcatapplication
+  template:
+    metadata:
+     labels:
+        app: tomcatapplication
+    spec:
+      containers:
+       - name: tomcat-containers
+         image: dhaneeshdharun/terraform:latest
+         ports:
+          - containerPort: 8080
