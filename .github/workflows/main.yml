@@ -24,6 +24,6 @@ jobs:
 
       # building the docker file 
       - name: docker build the image
-          run: "docker build -t dhaneeshdharun/teraform:$GITHUB_SHA . "
+        run: "docker build -t dhaneeshdharun/teraform:${{ github.sha }} . "
       
       
