@@ -11,5 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+       # pulling the code from the repository 
       - name: Code checkout
         uses: actions/checkout@v4
+
+      # building the docker file 
+      - name: docker build the image
+        uses: docker/build-push-action@v5
+        with:
+          run: docker build -t dhaneeshdharun/teraform:v1
+      
+      
