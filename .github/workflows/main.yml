@@ -24,6 +24,9 @@ jobs:
 
       # building the docker file 
       - name: docker build the image
-        run: "docker build -t dhaneeshdharun/teraform:${{ github.sha }} . "
+        run: "docker build -t dhaneeshdharun/terraform:${{ github.sha }} . "
+      # pushing the image to docker hub
+      - name: docker push to docker Hub
+        run: "docker push dhaneeshdharun/terraform:${{ github.sha }} "
       
       
