@@ -21,12 +21,13 @@ jobs:
         with:
           username: dhaneeshdharun
           password: DHAjad@123
-
+      - name: set a short sha variable
+        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
       # building the docker file 
       - name: docker build the image
-        run: "docker build -t dhaneeshdharun/terraform:${{ GITHUB_SHA::7 }} . "
+        run: "docker build -t dhaneeshdharun/terraform:${{ env.SHORT_SHA }} . "
       # pushing the image to docker hub
       - name: docker push to docker Hub
-        run: "docker push dhaneeshdharun/terraform:${{ GITHUB_SHA::7 }} "
+        run: "docker push dhaneeshdharun/terraform:${{ env.SHORT_SHA }} "
       
       
