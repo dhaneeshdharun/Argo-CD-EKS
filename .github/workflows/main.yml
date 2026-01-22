@@ -42,7 +42,7 @@ jobs:
       
       # commit the code to code repository
       - name: commit changes
-        run: /
+        run: |
           git config --global user.name "dhaneesh"
           git config --global user.email "dhaneeshjadhav@gmail.com"
           git add manifestfiles/deployment.yaml
