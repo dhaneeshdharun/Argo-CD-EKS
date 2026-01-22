@@ -29,5 +29,15 @@ jobs:
       # pushing the image to docker hub
       - name: docker push to docker Hub
         run: "docker push dhaneeshdharun/terraform:${{ env.SHORT_SHA }} "
+
+      # update the deployment file with new image tag
+      # install the yq took to update the yaml file
+      - name: install yq
+        run: |
+          sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
+          sudo chmod +x /usr/local/bin/yq
+
+      - name: update deployment file
+
       
       
