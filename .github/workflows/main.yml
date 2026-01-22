@@ -38,6 +38,6 @@ jobs:
           sudo chmod +x /usr/local/bin/yq
       - name: update deployment.yaml file
         run: |
-          yq -i '.spec.template.spec.containers[0].image = "dhaneeshdharun/terraform:${{ env.GITHUB_SHA }}" ' manifestfiles/deployment.yaml
+          yq -i '.spec.template.spec.containers[0].image = "dhaneeshdharun/terraform:${{ env.SHORT_SHA }}" ' manifestfiles/deployment.yaml
       
       
