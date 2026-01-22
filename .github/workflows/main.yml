@@ -40,4 +40,12 @@ jobs:
         run: |
           yq -i '.spec.template.spec.containers[0].image = "dhaneeshdharun/terraform:${{ env.SHORT_SHA }}" ' manifestfiles/deployment.yaml
       
-      
+      # commit the code to code repository
+      - name: commit changes
+        run: /
+          git config --global user.name "dhaneesh"
+          git config --global user.email "dhaneeshjadhav@gmail.com"
+          git add manifestfiles/deployment.yaml
+          git commit -m "update the deployment file image new tag with ${{ env.SHORT_SHA }}"
+          git push -u origin main
+            
