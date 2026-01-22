@@ -19,8 +19,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: dhaneeshdharun
-          password: DHAjad@123
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: set a short sha variable
         run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
       # building the docker file 
