@@ -47,5 +47,5 @@ jobs:
           git config --global user.email "dhaneeshjadhav@gmail.com"
           git add manifestfiles/deployment.yaml
           git commit -m "update the deployment file image new tag with ${{ env.SHORT_SHA }}"
-          git push -u origin main
+          git push origin main
             
