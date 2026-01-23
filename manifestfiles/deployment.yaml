@@ -11,11 +11,11 @@ spec:
       app: tomcatapplication
   template:
     metadata:
-     labels:
+      labels:
         app: tomcatapplication
     spec:
       containers:
-       - name: tomcat-containers
-         image: dhaneeshdharun/terraform:latest
-         ports:
-          - containerPort: 8080
+        - name: tomcat-containers
+          image: dhaneeshdharun/terraform:9df203
+          ports:
+            - containerPort: 8080
