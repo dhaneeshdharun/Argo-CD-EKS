@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: tomcat-containers
-          image: dhaneeshdharun/terraform:9df203
+          image: dhaneeshdharun/terraform:f1e6ef
           ports:
             - containerPort: 8080
